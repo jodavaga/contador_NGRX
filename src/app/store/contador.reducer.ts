@@ -16,7 +16,7 @@ export function contadorReducer( state: number = 10, action: Action ) {
             return state * 2;
 
         case contadorActions.DIVIDIR:
-            return state * 2;
+            return state / 2;
 
         default:
             return state;

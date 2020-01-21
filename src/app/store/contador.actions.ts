@@ -3,7 +3,7 @@ import { Action } from '@ngrx/store';
 export const INCREMENTAR = '[contador] Incrementar';
 export const DECREMENTAR = '[contador] Decrementar';
 export const MULTIPLICAR = '[contadorHijo] Multiplicar';
-export const DIVIDIR = '[contadorHijo] Dividir';
+export const DIVIDIR     = '[contadorHijo] Dividir';
 
 export class IncrementarAction implements Action {
     readonly type = INCREMENTAR;

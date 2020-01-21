@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { AppState } from '../../store/app.reducers';
+import * as contadorActions from '../../store/contador.actions';
 
 import { Store, select } from '@ngrx/store';
 
@@ -20,18 +21,24 @@ export class ContadorHijoComponent implements OnInit {
   }
 
   ngOnInit() {
-    // NGRX
+    // NGRX - subscribing to particular data in Store
     this.store.pipe(select('contador')).subscribe( counter => this.contadorHijo = counter );
   }
 
   multiplicar() {
-    this.contadorHijo *= 2;
+    // this.contadorHijo *= 2;
     // this.contadorHijoCambio.emit(this.contadorHijo);
+
+    // NGRX - dispatch actions
+    this.store.dispatch(new contadorActions.MultiplicarAction());
   }
 
   dividir() {
-    this.contadorHijo /= 2;
+    // this.contadorHijo /= 2;
     // this.contadorHijoCambio.emit(this.contadorHijo);
+
+    // NGRX - dispatch actions
+    this.store.dispatch(new contadorActions.DividirAction());
   }
 
   resetNieto( number: number) {
