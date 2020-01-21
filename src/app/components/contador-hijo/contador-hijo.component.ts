@@ -1,5 +1,9 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
+interface AppState {
+  contador: number;
+}
+
 @Component({
   selector: 'app-contador-hijo',
   templateUrl: './contador-hijo.component.html',
@@ -11,7 +15,7 @@ export class ContadorHijoComponent implements OnInit {
   @Input() contadorHijo: number;
   @Output() contadorHijoCambio = new EventEmitter<number>();
 
-  constructor() {
+  constructor( ) {
   }
 
   ngOnInit() {
