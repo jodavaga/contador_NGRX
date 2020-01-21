@@ -20,7 +20,6 @@ export class ContadorComponent implements OnInit {
 
     // NGRX
     this.store.subscribe( state => {
-      console.log(state);
       this.contador = state.contador;
     });
   }
