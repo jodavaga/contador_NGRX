@@ -4,6 +4,7 @@ export const INCREMENTAR = '[contador] Incrementar';
 export const DECREMENTAR = '[contador] Decrementar';
 export const MULTIPLICAR = '[contadorHijo] Multiplicar';
 export const DIVIDIR     = '[contadorHijo] Dividir';
+export const RESET     = '[contadorNieto] Reset';
 
 export class IncrementarAction implements Action {
     readonly type = INCREMENTAR;
@@ -16,16 +17,22 @@ export class DecrementarAction implements Action {
 }
 
 export class MultiplicarAction implements Action {
-    type = MULTIPLICAR;
-    constructor() {}
+    readonly type = MULTIPLICAR;
+    constructor(public payload: number) {}
 }
 
 export class DividirAction implements Action {
-    type = DIVIDIR;
+    readonly type = DIVIDIR;
+    constructor(public payload: number) {}
+}
+
+export class ResetAction implements Action {
+    readonly type = RESET;
     constructor() {}
 }
 
 export type contadorActions =   IncrementarAction |
                                 DecrementarAction |
                                 MultiplicarAction |
-                                DividirAction;
+                                DividirAction |
+                                ResetAction;

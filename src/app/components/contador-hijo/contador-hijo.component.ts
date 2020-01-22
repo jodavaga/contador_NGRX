@@ -30,7 +30,7 @@ export class ContadorHijoComponent implements OnInit {
     // this.contadorHijoCambio.emit(this.contadorHijo);
 
     // NGRX - dispatch actions
-    this.store.dispatch(new contadorActions.MultiplicarAction());
+    this.store.dispatch(new contadorActions.MultiplicarAction(2));
   }
 
   dividir() {
@@ -38,7 +38,7 @@ export class ContadorHijoComponent implements OnInit {
     // this.contadorHijoCambio.emit(this.contadorHijo);
 
     // NGRX - dispatch actions
-    this.store.dispatch(new contadorActions.DividirAction());
+    this.store.dispatch(new contadorActions.DividirAction(2));
   }
 
   resetNieto( number: number) {
